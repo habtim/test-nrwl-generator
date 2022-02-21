@@ -1,12 +1,15 @@
 # Testing nrwl generator
 
-## Steps to reproduce
+## Setup
 1. `npx create-nx-workspace --preset=angular`
 2. `nx generate @nrwl/workspace:workspace-generator application`
 3. Remove `"cli": "nx"` from generated schema.json. Otherwise the generator just do nothing
-4. Run `nx workspace-generator application`
+4. Adjust generator to use externalSchematic, see `tools/generators/application/index.ts`
 
-Following error should occur
+## Steps to reproduce
+- Run `nx workspace-generator application`
+
+Following error should occur:
 ```
 PS C:\test-nrwl-generator> nx workspace-generator application
 √ What name would you like to use for the application? · second-app
